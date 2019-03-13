@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts 
+Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+	<form-beans>
+	<form-bean name="admin" type="form.DangNhapAdminForm" />
+		<form-bean name="danhSachNhaHangForm" type="form.DanhSachNhaHangForm" />
+		<form-bean name="nhaHangForm" type="form.NhaHangForm" />
+		<form-bean name="danhSachKhachHangForm" type="form.DanhSachKhachHangForm" />		
+		<form-bean name="khachHangForm" type="form.KhachHangForm" />
+		<form-bean name="danhSachNhanVienForm" type="form.DanhSachNhanVienForm"/>
+		<form-bean name="nhanVienForm" type="form.NhanVienForm"/>
+		<form-bean name="danhSachMonAnForm" type="form.DanhSachMonAnForm"/>
+		<form-bean name="monAnForm" type="form.MonAnForm"/>
+		<form-bean name="adminNH" type="form.DangNhapAdminNHForm" ></form-bean>
+		<form-bean name="dangNhapKhachHangForm" type="form.DangNhapKhachHangForm" />
+		<form-bean name="dangKyKhachHangForm" type="form.DangKyKhachHangForm"/>
+		<form-bean name="trangChuForm" type="form.TrangChuForm"/>
+		<form-bean name="danhSachNhaHangTrongKhuVucForm" type="form.DanhSachNhaHangTrongKhuVucForm"/>
+		<form-bean name="danhSachMonAnTrongNhaHangForm" type="form.DanhSachMonAnTrongNhaHangForm"/>
+		<form-bean name="gioHangForm" type="form.GioHangForm"/>
+		<form-bean name="lichSuDatHangForm" type="form.LichSuDatHangForm"/>
+		<form-bean name="donHangForm" type="form.DonHangForm"/>
+		<form-bean name="thongTinGiaoHangForm" type="form.ThongTinGiaoHangForm"/>
+		<form-bean name="thongKeDoanhThuForm" type="form.ThongKeDoanhThuForm"/>
+		<form-bean name="quanLyHoaDonForm" type="form.QuanLyHoaDonForm"/>
+	</form-beans>
+	<action-mappings>
+		<action input="/DangNhapKhachHang.jsp" name="dangNhapKhachHangForm" path="/dang-nhap-khach-hang"
+			scope="session" type="action.DangNhapKhachHangAction">
+			<forward name="dangNhapThanhCong" path="/trang-chu.do" />
+			<forward name="dangNhapThatBai" path="/index.jsp" />
+		</action>
+		
+		<action input="/DangKyKhachHang.jsp" name="dangKyKhachHangForm" path="/dang-ky-khach-hang"
+			scope="session" type="action.DangKyKhachHangAction">
+			<forward name="dangKyThatBai" path="/DangKyKhachHang.jsp" />
+			<forward name="dangKyThanhCong" path="/index.jsp" />
+			<forward name="dangKyKhachHang" path="/DangKyKhachHang.jsp" />
+			<forward name="tonTaiEmail" path="/DangKyKhachHang.jsp" />
+		</action>
+		
+		<action input="/TrangChu.jsp" name="trangChuForm" path="/trang-chu"
+			scope="session" type="action.TrangChuAction">
+			<forward name="hienThiTrangChu" path="/TrangChu.jsp" />
+			<forward name="chuaChonKhuVuc" path="/TrangChu.jsp" />
+			<forward name="hienThiNhaHangTrongKhuVuc" path="/danh-sach-nha-hang-trong-khu-vuc.do" />
+			<forward name="dangNhapLai" path="/DangNhapKhachHang.jsp" />
+		</action>
+		
+		<action input="/DanhSachNhaHang.jsp" name="danhSachNhaHangTrongKhuVucForm" path="/danh-sach-nha-hang-trong-khu-vuc"
+			scope="session" type="action.DanhSachNhaHangTrongKhuVucAction">
+			<forward name="danhSachNhaHangTrongKhuVuc" path="/DanhSachNhaHang.jsp" />
+		</action>
+		
+		<action input="/ChiTietNhaHang.jsp" name="danhSachMonAnTrongNhaHangForm" path="/danh-sach-mon-an-trong-nha-hang"
+			scope="session" type="action.DanhSachMonAnTrongNhaHangAction">
+			<forward name="danhSachMonAnTrongNhaHang" path="/ChiTietNhaHang.jsp" />
+		</action>
+		
+		<action input="/ChiTietNhaHang.jsp" name="gioHangForm" path="/gio-hang"
+			scope="session" type="action.GioHangAction">
+			<forward name="hienThiGioHang" path="/don-hang.do" />
+			<forward name="quayLaiMonAn" path="/danh-sach-mon-an-trong-nha-hang.do" />
+			<forward name="gioHangTrong" path="/don-hang.do" />
+			<forward name="gioHangTrong" path="/don-hang.do" />
+		</action>
+		
+		<action input="/GioHang.jsp" name="donHangForm" path="/don-hang"
+			scope="session" type="action.DonHangAction">
+			<forward name="hienThiDonHang" path="/GioHang.jsp" />
+		</action>
+		
+		<action input="/ThongTinGiaoHang.jsp" name="thongTinGiaoHangForm" path="/thong-tin-giao-hang"
+			scope="session" type="action.ThongTinGiaoHangAction">
+			<forward name="datHangKhongThanhCong" path="/ThongTinGiaoHang.jsp" />
+			<forward name="datHangThanhCong" path="/ThongTinGiaoHang.jsp" />
+			<forward name="thongTinGiaoHang" path="/ThongTinGiaoHang.jsp" />
+		</action>
+		
+		<action input="/TrangChu.jsp" name="dangKyKhachHangForm" path="/thong-tin-ca-nhan"
+			scope="session" type="action.ThongTinCaNhanAction">
+			<forward name="thongTinCaNhan" path="/ThongTinCaNhan.jsp" />
+		</action>
+		<action input="/TrangChu.jsp" name="lichSuDatHangForm" path="/lich-su-dat-hang"
+			scope="session" type="action.LichSuDatHangAction">
+			<forward name="lichSuDatHang" path="/LichSuDatHang.jsp" />
+		</action>
+		    <!-- Đăng nhập admin -->
+		<action input="/DangNhapAdmin.jsp" name="admin" path="/dang-nhap-admin"
+			scope="request" type="action.DangNhapAdminAction">
+			<forward name="thanhCong" path="/danh-sach-nha-hang.do" />
+			<forward name="thatBai" path="/DangNhapAdmin.jsp" />
+		</action>
+		
+		<!-- Hiển thị danh sách nhà hàng -->
+		<action input="/DangNhapAdmin.jsp" name="danhSachNhaHangForm" path="/danh-sach-nha-hang"
+			scope="request" type="action.DanhSachNhaHangAction">
+			<forward name="danhSachNhaHang" path="/DanhSachTaiKhoangNhaHang.jsp" />
+		</action>
+		
+		<!-- Hiển thị danh sách người dùng -->
+		<action input="/DangNhapAdmin.jsp" name="danhSachKhachHangForm" path="/danh-sach-khach-hang"
+			scope="request" type="action.DanhSachKhachHangAction">
+			<forward name="danhSachKhachHang" path="/DanhSachNguoiDung.jsp" />
+		</action>
+		
+		<!-- Đăng nhập nhà hàng -->
+		<action input="/DangNhapNhaHang.jsp" name="adminNH" path="/dang-nhap-adminNH"
+			scope="request" type="action.DangNhapAdminNHAction">
+			<forward name="thanhCong" path="/danh-sach-nhan-vien.do" />
+			<forward name="thatBai" path="/DangNhapNhaHang.jsp" />
+		</action>
+		
+		<!-- Hiển thị danh sách nhân viên -->
+		<action input="/DangNhapNhaHang.jsp" name="danhSachNhanVienForm" path="/danh-sach-nhan-vien"
+			scope="request" type="action.DanhSachNhanVienAction">
+			<forward name="danhSachNhanVien" path="/DanhSachNhanVien.jsp" />
+		</action>
+		
+		<!-- Hiển thị danh sách món ăn -->
+		<action input="/DangNhapNhaHang.jsp" name="danhSachMonAnForm" path="/danh-sach-mon-an"
+			scope="request" type="action.DanhSachMonAnAction">
+			<forward name="danhSachMonAn" path="/DanhSachMonAn.jsp" />
+		</action>
+		
+		<!-- Xóa nhà hàng -->
+		<action input="" name="nhaHangForm" path="/xoa-nha-hang"
+			scope="request" type="action.XoaNhaHangAction">
+			<forward name="xoaNhaHangThanhCong" path="/danh-sach-nha-hang.do" />
+		</action>
+		
+		<!-- Xóa khách hàng -->
+		<action input="" name="khachHangForm" path="/xoa-khach-hang"
+			scope="request" type="action.XoaKhachHangAction">
+			<forward name="xoaKhachHangThanhCong" path="/danh-sach-khach-hang.do" />
+		</action>
+		
+		<!-- Xóa nhân viên -->
+		<action input="" name="nhanVienForm" path="/xoa-nhan-vien"
+			scope="request" type="action.XoaNhanVienAction">
+			<forward name="xoaNhanVienThanhCong" path="/danh-sach-nhan-vien.do" />
+		</action>
+		
+		<!--Xóa món ăn -->
+		<action input="" name="monAnForm" path="/xoa-mon-an"
+			scope="request" type="action.XoaMonAnAction">
+			<forward name="xoaMonAnThanhCong" path="/danh-sach-mon-an.do" />
+		</action>
+		
+		<!-- Sửa khách hàng -->
+		<action input="" name="khachHangForm" path="/sua-khach-hang"
+			scope="request" type="action.SuaKhachHangAction">
+			<forward name="suaKhachHang" path="/ChinhSuaNguoiDung.jsp"></forward>
+			<forward name="suaKhachHangXong" path="/danh-sach-khach-hang.do"></forward>
+		</action>
+		
+		<!-- Sửa nhân viên -->
+		<action input="" name="nhanVienForm" path="/sua-nhan-vien"
+			scope="request" type="action.SuaNhanVienAction">
+			<forward name="suaNhanVien" path="/ChinhSuaNhanVien.jsp"></forward>
+			<forward name="suaNhanVienXong" path="/danh-sach-nhan-vien.do"></forward>
+		</action>
+		
+		<!-- Sửa món ăn -->
+		<action input="" name="monAnForm" path="/sua-mon-an"
+			scope="request" type="action.SuaMonAnAction">
+			<forward name="suaMonAn" path="/ChinhSuaMonAn.jsp"></forward>
+			<forward name="suaMonAnXong" path="/danh-sach-mon-an.do"></forward>
+		</action>
+		
+		<action input="" name="thongKeDoanhThuForm" path="/thong-ke"
+			scope="request" type="action.ThongKeDoanhThuAction">
+			<forward name="thongKeDoanhThu" path="/ThongKeDoanhThu.jsp"></forward>
+		
+		</action>
+		
+		<action input="" name="quanLyHoaDonForm" path="/quan-ly-hoa-don"
+			scope="request" type="action.QuanLyHoaDonAction">
+			<forward name="quanLyHoaDon" path="/QuanLyDonHang.jsp"></forward>
+			<forward name="xacNhanThanhCong" path="/QuanLyDonHang.jsp"></forward>
+		
+		</action>
+	</action-mappings>
+	<message-resources parameter="action.ApplicationResources" />
+
+</struts-config>

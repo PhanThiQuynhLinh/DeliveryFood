@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+encoding//WebContent/DangKyKhachHang.jsp=UTF-8
+encoding//WebContent/DangNhapKhachHang.jsp=UTF-8
+encoding//WebContent/GioHang.jsp=UTF-8
+encoding//WebContent/LichSuDatHang.jsp=UTF-8
+encoding//WebContent/QuanLyDonHang.jsp=UTF-8
+encoding//WebContent/ThongTinCaNhan.jsp=UTF-8
+encoding//WebContent/ThongTinGiaoHang.jsp=UTF-8
+encoding//src/action/DangNhapKhachHangAction.java=UTF-8
+encoding//src/action/DonHangAction.java=UTF-8
+encoding//src/action/ThongTinGiaoHangAction.java=UTF-8
+encoding//src/action/TrangChuAction.java=UTF-8
+encoding//src/common/StringProcess.java=UTF-8
+encoding//src/model/dao/LichSuDatHangDao.java=UTF-8
+encoding/<project>=UTF-8
